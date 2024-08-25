@@ -1,22 +1,24 @@
-<div
-    class="p-4 bg-white/5 border border-white/5 rounded-xl space-y-2 hover:border-blue-700/70 hover:border cursor-pointer">
+<x-panel>
     <section class="flex items-start">
-        <h3 class="text-sm">Employer Name</h3>
+        <h3 class="text-sm text-gray-400">GovExec</h3>
     </section>
 
-    <section class="flex flex-col items-center space-y-1">
-        <h1 class="font-bold text-lg">Job Title</h1>
-        <p class="text-sm">salary</p>
+    <section class="text-center space-y-2">
+        <h1
+            class="font-bold text-lg max-w-[200px] mx-auto group-hover:text-blue-700 transition-colors duration-300 capitalize">
+            Youngstown baby girl
+        </h1>
+        <p class="text-xs">Full Time - From $60,000</p>
     </section>
 
     <section class="flex justify-between mt-auto">
-        <div class="flex items-center self-end gap-x-4">
-            <x-tag>Tag</x-tag>
-            <x-tag>Tag</x-tag>
-            <x-tag>Tag</x-tag>
+        <div class="flex items-center self-end gap-x-2">
+            <x-tag size="small">Frontend</x-tag>
+            <x-tag size="small">Backend</x-tag>
+            <x-tag size="small">API</x-tag>
         </div>
-        <div class="self-end">
-            <img class="rounded" src="http://placehold.it/48/48" alt="">
+        <div class="self-end mt-5">
+            <x-employer-logo :size="42" />
         </div>
     </section>
-</div>
+</x-panel>
