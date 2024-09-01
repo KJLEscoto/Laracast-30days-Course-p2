@@ -1,9 +1,10 @@
 @props(['job'])
 
 <x-panel>
+
     <div class="flex gap-x-4">
         <div>
-            <x-employer-logo />
+            <x-employer-logo :employer="$job->employer" />
         </div>
 
         <div class="w-full flex-1 flex flex-col justify-between">
@@ -18,7 +19,9 @@
 
                 <section>
                     <h1 class="font-bold text-xl group-hover:text-blue-700 transition-colors duration-300 capitalize">
-                        {{ $job->title }}
+                        <a href="{{ $job->url }}" class="hover:underline">
+                            {{ $job->title }}
+                        </a>
                     </h1>
                 </section>
             </div>
@@ -33,4 +36,5 @@
             </section>
         </div>
     </div>
+    </a>
 </x-panel>

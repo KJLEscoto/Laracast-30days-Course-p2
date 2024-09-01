@@ -2,10 +2,14 @@
     <div class="space-y-10">
         <section class="text-center space-y-5">
             <h1 class="capitalize text-3xl font-medium">Let's find you a great job</h1>
-            <form method="POST" action="">
-                <input class="rounded-xl px-5 py-3 w-full max-w-xl bg-white/10" type="text" name="find_job"
+            <!-- <form method="POST" action="">
+                <input class="rounded-full px-5 py-3 w-full max-w-xl bg-white/10" type="text" name="find_job"
                     id="find_job" placeholder="I'm looking for...">
-            </form>
+            </form> -->
+
+            <x-forms.form action="/search">
+                <x-forms.input :label="false" name="q" placeholder="I'm looking for..." class="rounded-full" />
+            </x-forms.form>
         </section>
 
         <section class="space-y-5">

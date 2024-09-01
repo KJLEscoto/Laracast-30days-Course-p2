@@ -27,11 +27,27 @@
                 <a href="">Careers</a>
                 <a href="">Salaries</a>
                 <a href="">Companies</a>
+                <!-- request()->routeIs('about')' -->
             </div>
 
-            <div>
-                <a href="#">Post a Job</a>
-            </div>
+            @auth
+                <div class="space-x-5 flex items-center font-medium">
+                    <a href="/jobs/create">Post a Job</a>
+
+                    <form method="POST" action="/logout">
+                        @csrf
+                        @method('DELETE')
+                        <x-forms.button class="bg-red-600 hover:bg-red-700">Log Out</x-forms.button>
+                    </form>
+                </div>
+            @endauth
+
+            @guest
+                <div class="space-x-5 font-medium">
+                    <a href="/register">Sign Up</a>
+                    <a href="/login">Login</a>
+                </div>
+            @endguest
         </nav>
 
         <hr class="border-white/10">
