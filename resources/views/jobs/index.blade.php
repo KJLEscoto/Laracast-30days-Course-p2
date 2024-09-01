@@ -11,9 +11,9 @@
         <section class="space-y-5">
             <x-category-heading>Featured Jobs</x-category-heading>
             <div class="grid grid-cols-3 gap-10">
-                <x-job-cards />
-                <x-job-cards />
-                <x-job-cards />
+                @foreach ($featuredJobs as $job)
+                    <x-job-card :job="$job" />
+                @endforeach
             </div>
         </section>
 
@@ -21,24 +21,17 @@
             <x-category-heading>Tags</x-category-heading>
 
             <div class="flex flex-wrap gap-3">
-                <x-tag>Frontend</x-tag>
-                <x-tag>Backend</x-tag>
-                <x-tag>API</x-tag>
-                <x-tag>Frontend</x-tag>
-                <x-tag>Backend</x-tag>
-                <x-tag>API</x-tag>
-                <x-tag>Frontend</x-tag>
-                <x-tag>Backend</x-tag>
-                <x-tag>API</x-tag>
+                @foreach ($tags as $tag)
+                    <x-tag :tag="$tag" />
+                @endforeach
             </div>
         </section>
 
         <section class="space-y-5">
             <x-category-heading>Recent Jobs</x-category-heading>
-            <x-expanded-job-cards />
-            <x-expanded-job-cards />
-            <x-expanded-job-cards />
-            <x-expanded-job-cards />
+            @foreach ($jobs as $job)
+                <x-expanded-job-card :job="$job" />
+            @endforeach
         </section>
     </div>
 </x-layout>
